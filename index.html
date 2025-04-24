@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мой сайт-портфолио</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Mukat Nursultan</h1>
+    <p>Будущий CSE</p>
+  </header>
+  <button onclick="toggleTheme()" style="position:absolute; top:20px; right:20px;">🌗</button>
+
+<script>
+  function toggleTheme() {
+    document.body.classList.toggle('dark');
+
+    if (document.body.classList.contains('dark')) {
+      localStorage.setItem('theme', 'dark');
+    } else {
+      localStorage.setItem('theme', 'light');
+    }
+  }
+
+  window.onload = () => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark');
+    }
+  };
+</script>
+<button onclick="toggleTheme()" style="position:absolute; top:20px; right:20px;">🌗</button>
+
+<audio id="bg-music" loop>
+  <source src="Армен - Ты ведь знаешь что в субботу, вор не ходит на работу.mp3" type="audio/mpeg">
+  Ваш браузер не поддерживает воспроизведение аудио.
+</audio>
+
+<script>
+  const music = document.getElementById('bg-music');
+
+  function toggleTheme() {
+    const body = document.body;
+
+    body.classList.toggle('dark');
+
+    if (body.classList.contains('dark')) {
+      music.play(); 
+      localStorage.setItem('theme', 'dark');
+    } else {
+      music.pause();
+      localStorage.setItem('theme', 'light');
+    }
+  }
+
+  
+  window.onload = () => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark');
+      music.play(); 
+    }
+  };
+</script>
+  <section>
+    <img src="photo_2025-04-24_13-34-44.jpg" alt="Фото профиля" width="150">
+    <h2>Обо мне</h2>
+    <p>Меня зовут Нурсултан. Я из города Павлодар, учусь в Торайгыров Университет, на направлении Computer Science.</p>
+    <p>Увлекаюсь веб-разработкой, UI/UX-дизайном и созданием игр.</p>
+    <p>В свободное время люблю смотреть фильмы, бегать и кататься на мотоцикле.</p>
+  </section>
+
+  <section>
+    <h2>Навыки</h2>
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>Базовый С++</li>
+      <li>Могу водить Т-40</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Если что пишите🤙</h2>
+    <ul>
+      <li>Email: nursultan.mukat@gmail.com</li>
+      <li>Telegram: @astrashno</li>
+      <li>GitHub:<a href="https://github.com/Nursultan-Mukat">github.com/Nursultan-Mukat</a></li>
+    </ul>
+  </section>
+  <footer>
+    <p>&copy; 2025 Mukat Nursultan. Все права защищены злой собакой.</p>
+  </footer>
+
+</body>
+</html>
